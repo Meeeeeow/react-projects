@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id ="root">React not useable</div>
+        <script>
+            const person =(props)=>{
+                return React.createElement('div',
+                {class:'occupation'},
+                [
+                    React.createElement('h2',{},props.name),
+                    React.createElement('h3',{},props.age),
+                    React.createElement('h3',{},props.occupation),
+                ]
+                );
+            }
+            const App = () =>{
+                return React.createElement('div',{class:"check-Class"},
+                [
+                    React.createElement('h1',{},'React is used with pure js.'),
+                    React.createElement('p',{},'I am a paragraph'),
+                    React.createElement(person,{name:'Sakib',age:23,occupation:'student'}),
+                    React.createElement(person,{name:'Rahim',age:21,occupation:'student'}),
+                    React.createElement(person,{name:'Shiho',age:31,occupation:'Worker'}),
+                ]);
+            }
+
+            ReactDOM.render(
+                React.createElement(App),
+                document.getElementById('root')
+            );
+        </script>
+    </body>
+</html>
